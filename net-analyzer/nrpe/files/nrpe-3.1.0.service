@@ -1,0 +1,10 @@
+[Unit]
+Description=Daemon to answer plugin requests from Nagios on remote hosts
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/usr/bin/nrpe -c /etc/nagios/nrpe.cfg -f
+
+[Install]
+WantedBy=multi-user.target
